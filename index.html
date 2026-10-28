@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Shop the latest everyday essentials at NovaCart.">
+  <title>NovaCart | Everyday Finds</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="announcement">A little treat for your first order: use <strong>HELLO10</strong> for 10% off <a href="#products">Shop now ↗</a></div>
+
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="NovaCart home"><span class="brand-mark">N</span> nova<span>cart</span></a>
+    <form class="search-form" id="searchForm" role="search">
+      <label class="sr-only" for="searchInput">Search products</label>
+      <input id="searchInput" type="search" placeholder="Search for products..." autocomplete="off">
+      <button type="submit" aria-label="Search">⌕</button>
+    </form>
+    <div class="header-actions">
+      <button class="icon-button theme-toggle" id="themeToggle" type="button" aria-label="Switch color theme" title="Switch color theme">☾</button>
+      <button class="icon-button account-button" type="button" aria-label="Account">♙<span>Account</span></button>
+      <button class="icon-button cart-button" id="openCartBtn" type="button" aria-label="Open shopping cart">♧<span>Cart</span><b id="cartCount">0</b></button>
+    </div>
+  </header>
+
+  <nav class="category-nav" aria-label="Product categories">
+    <button class="nav-category active" data-category="All">All products</button>
+    <button class="nav-category" data-category="Tech">Tech</button>
+    <button class="nav-category" data-category="Home">Home</button>
+    <button class="nav-category" data-category="Style">Style</button>
+    <button class="nav-category" data-category="Fitness">Fitness</button>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow"><span></span> GOOD THINGS, EVERY DAY</p>
+        <h1>Little upgrades.<br><em>Big difference.</em></h1>
+        <p class="hero-description">Thoughtful finds for your space, your style, and everything in between.</p>
+        <a class="primary-button" href="#products">Explore collection <span>↗</span></a>
+        <div class="hero-proof"><div class="avatar-stack"><i>J</i><i>A</i><i>M</i></div><span><strong>4.8/5</strong> from happy shoppers</span></div>
+      </div>
+      <div class="hero-art">
+        <div class="hero-orbit orbit-one"></div><div class="hero-orbit orbit-two"></div>
+        <img src="https://images.unsplash.com/photo-1490312278390-ab64016e0aa9?auto=format&fit=crop&w=1100&q=85" alt="Minimal modern living room with warm natural tones">
+        <div class="floating-note"><span class="note-icon">✦</span><div><strong>Made for everyday</strong><small>Good design, useful details.</small></div></div>
+        <div class="hero-sticker">FIND<br>YOUR<br>FAVORITE</div>
+      </div>
+    </section>
+
+    <section class="benefits" aria-label="Shopping benefits">
+      <div><span class="benefit-icon">↗</span><p><strong>Free shipping</strong><small>On orders over ₹1,499</small></p></div>
+      <div><span class="benefit-icon">♡</span><p><strong>Made to be loved</strong><small>Thoughtful everyday picks</small></p></div>
+      <div><span class="benefit-icon">↺</span><p><strong>Easy returns</strong><small>7-day return window</small></p></div>
+      <div><span class="benefit-icon">♧</span><p><strong>Secure checkout</strong><small>Your details stay safe</small></p></div>
+    </section>
+
+    <section class="products-section" id="products">
+      <div class="section-heading">
+        <div><p class="eyebrow">THE GOOD STUFF</p><h2>Find your next <em>favorite.</em></h2></div>
+        <div class="product-controls">
+          <label class="sr-only" for="sortSelect">Sort products</label>
+          <select id="sortSelect"><option value="featured">Featured</option><option value="low-high">Price: low to high</option><option value="high-low">Price: high to low</option><option value="rating">Top rated</option></select>
+        </div>
+      </div>
+      <div class="filter-row" id="filterRow">
+        <button class="filter-chip active" data-category="All">Everything <span>8</span></button>
+        <button class="filter-chip" data-category="Tech">Tech</button>
+        <button class="filter-chip" data-category="Home">Home</button>
+        <button class="filter-chip" data-category="Style">Style</button>
+        <button class="filter-chip" data-category="Fitness">Fitness</button>
+      </div>
+      <div class="product-grid" id="productGrid" aria-live="polite"></div>
+      <p class="empty-state" id="emptyState" hidden>No products found. Try another search.</p>
+    </section>
+
+    <section class="newsletter">
+      <div><p class="eyebrow">A LITTLE GOOD IN YOUR INBOX</p><h2>Fresh finds, <em>occasionally.</em></h2><p>Get new arrivals and little perks. No spam, ever.</p></div>
+      <form id="newsletterForm" class="newsletter-form"><label class="sr-only" for="emailInput">Email address</label><input id="emailInput" type="email" placeholder="Your email address" required><button class="primary-button" type="submit">Sign me up <span>→</span></button><small id="newsletterMessage">By subscribing, you agree to receive store updates.</small></form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand" href="#"><span class="brand-mark">N</span> nova<span>cart</span></a>
+    <p>Good finds for real life.</p>
+    <div class="footer-links"><a href="#products">Shop</a><a href="#footer-help">Help</a><a href="#footer-help">Contact</a></div>
+    <small id="footer-help">© <span id="year"></span> NovaCart. Demo storefront built with HTML, CSS and JavaScript.</small>
+  </footer>
+
+  <div class="quick-view-backdrop" id="quickViewBackdrop"></div>
+  <section class="quick-view" id="quickView" role="dialog" aria-modal="true" aria-labelledby="quickViewName" aria-hidden="true">
+    <button class="quick-view-close" id="quickViewClose" type="button" aria-label="Close product details">×</button>
+    <div class="quick-view-image"><img id="quickViewImage" src="" alt=""></div>
+    <div class="quick-view-details">
+      <p class="eyebrow" id="quickViewCategory">PRODUCT DETAILS</p>
+      <div class="quick-view-rating" id="quickViewRating">★★★★★ <span>4.8 rating</span></div>
+      <h2 id="quickViewName">Product name</h2>
+      <div class="quick-view-price"><strong id="quickViewPrice">₹0</strong><del id="quickViewOldPrice">₹0</del><span class="save-pill" id="quickViewSave">SAVE</span></div>
+      <p class="quick-view-description" id="quickViewDescription">A thoughtfully chosen everyday essential.</p>
+      <div class="quick-view-perks"><span>✓ Quality checked</span><span>✓ Easy 7-day returns</span></div>
+      <div class="quick-view-actions"><div class="quick-quantity"><button id="quickQtyMinus" type="button" aria-label="Decrease quantity">−</button><span id="quickQty">1</span><button id="quickQtyPlus" type="button" aria-label="Increase quantity">+</button></div><button class="primary-button" id="quickAddBtn" type="button">Add to cart <span>→</span></button></div>
+      <small class="quick-view-note">Secure shopping experience · Demo storefront</small>
+    </div>
+  </section>
+
+  <div class="overlay" id="overlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart" aria-hidden="true">
+    <div class="cart-header"><div><p class="eyebrow">YOUR BAG</p><h2>Your cart <span id="drawerCartCount">(0)</span></h2></div><button class="close-cart" id="closeCartBtn" aria-label="Close cart">×</button></div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-empty" id="cartEmpty"><span>♧</span><h3>Your cart is taking a nap.</h3><p>Add something you love and it’ll show up here.</p><button class="primary-button" id="continueShoppingBtn">Keep browsing</button></div>
+    <div class="cart-footer" id="cartFooter"><div class="subtotal-row"><span>Subtotal</span><strong id="cartSubtotal">₹0</strong></div><p>Shipping and taxes calculated at checkout.</p><button class="checkout-button" id="checkoutBtn">Continue to checkout <span>→</span></button><small>Demo only — no payment will be taken.</small></div>
+  </aside>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
